@@ -1,0 +1,185 @@
+
+{
+    "movieDetail": [
+      {
+        "title": "Forrest Gump",
+        "movieIMDbRating": 8.8,
+        "totalRatingCount": 2016919,
+        "totalUserReviews": "2.9K",
+        "totalCriticReviews": "173",
+        "director": {
+          "directorName": "Robert Zemeckis",
+          "otherFamousMovie": "Flight"
+        },
+        "datePublished": "1994-07-06",
+        "leadActor": {
+          "actorName": "Tom Hanks",
+          "actorAge": 66
+        },
+        "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood swe...",
+        "duration": 142
+      },
+      {
+        "title": "John Wick Chapter 3  Parabellum",
+        "movieIMDbRating": 7.4,
+        "totalRatingCount": 330425,
+        "totalUserReviews": "2.4K",
+        "totalCriticReviews": "399",
+        "director": {
+          "directorName": "Chad Stahelski",
+          "otherFamousMovie": "John Wick"
+        },
+        "datePublished": "2019-07-05",
+        "leadActor": {
+          "actorName": "Keanu Reeves",
+          "actorAge": 58
+        },
+        "description": "John Wick is on the run after killing a member of the international assassins guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.",
+        "duration": 130
+      },
+      {
+        "title": "Joker",
+        "movieIMDbRating": 8.4,
+        "totalRatingCount": 1213550,
+        "totalUserReviews": "11.3K",
+        "totalCriticReviews": "697",
+        "director": {
+          "directorName": "Todd Phillips",
+          "otherFamousMovie": "War Dogs"
+        },
+        "datePublished": "2019-07-05",
+        "leadActor": {
+          "actorName": "Joaquin Phoenix",
+          "actorAge": 48
+        },
+        "description": "A mentally troubled stand-up comedian embarks on a downward spiral that leads to the creation of an iconic villain.",
+        "duration": 122
+      },
+      {
+        "title": "Morbius",
+        "movieIMDbRating": 5.2,
+        "totalRatingCount": 90706,
+        "totalUserReviews": "1.9K",
+        "totalCriticReviews": "230",
+        "director": {
+          "directorName": "Daniel Espinosa",
+          "otherFamousMovie": "Child 44"
+        },
+        "datePublished": "2022-04-01",
+        "leadActor": {
+          "actorName": "Jared Leto",
+          "actorAge": 50
+        },
+        "description": "Biochemist Michael Morbius tries to cure himself of a rare blood disease, but he inadvertently infects himself with a form of vampirism instead.",
+        "duration": 104
+      },
+      {
+        "title": "Pulp Fiction",
+        "movieIMDbRating": 8.9,
+        "totalRatingCount": 1999600,
+        "totalUserReviews": "3.4K",
+        "totalCriticReviews": "297",
+        "director": {
+          "directorName": "Quentin Tarantino",
+          "otherFamousMovie": "Death Proof"
+        },
+        "datePublished": "2022-04-01",
+        "leadActor": {
+          "actorName": "John Travolta",
+          "actorAge": 68
+        },
+        "description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        "duration": 154
+      },
+      {
+        "title": "SpiderMan No Way Home",
+        "movieIMDbRating": 8.3,
+        "totalRatingCount": 675951,
+        "totalUserReviews": "6K",
+        "totalCriticReviews": "396",
+        "director": {
+          "directorName": "Jon Watts",
+          "otherFamousMovie": "Clown"
+        },
+        "datePublished": "2021-12-17",
+        "leadActor": {
+          "actorName": "Tom Holland",
+          "actorAge": 26
+        },
+        "description": "With Spider-Mans identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+        "duration": 148
+      },
+      {
+        "title": "The Avengers",
+        "movieIMDbRating": 8,
+        "totalRatingCount": 1364943,
+        "totalUserReviews": "2K",
+        "totalCriticReviews": "755",
+        "director": {
+          "directorName": "Joss Whedon",
+          "otherFamousMovie": "Avengers Age of Ultron"
+        },
+        "datePublished": "2012-05-11",
+        "leadActor": {
+          "actorName": "Robert Downey Jr.",
+          "actorAge": 57
+        },
+        "description": "Earths mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+        "duration": 143
+      },
+      {
+        "title": "The Dark Knight",
+        "movieIMDbRating": 9,
+        "totalRatingCount": 2581534,
+        "totalUserReviews": "8.2K",
+        "totalCriticReviews": "436",
+        "director": {
+          "directorName": "Christopher Nolan",
+          "otherFamousMovie": "Inception"
+        },
+        "datePublished": "2008-07-18",
+        "leadActor": {
+          "actorName": "Christian Bale",
+          "actorAge": 48
+        },
+        "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+        "duration": 152
+      },
+      {
+        "title": "Thor Ragnarok",
+        "movieIMDbRating": 7.9,
+        "totalRatingCount": 715040,
+        "totalUserReviews": "1.8K",
+        "totalCriticReviews": "462",
+        "director": {
+          "directorName": "Taika Waititi",
+          "otherFamousMovie": "Thor: Love and Thunder"
+        },
+        "datePublished": "2017-11-03",
+        "leadActor": {
+          "actorName": "Chris Hemsworth",
+          "actorAge": 39
+        },
+        "description": "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela.",
+        "duration": 130
+      },
+      {
+        "title": "Avengers Endgame",
+        "movieIMDbRating": 8.4,
+        "totalRatingCount": 1073964,
+        "totalUserReviews": "9.5K",
+        "totalCriticReviews": "593",
+        "director": {
+          "directorName": "Anthony Russo",
+          "otherFamousMovie": "Captain America: The Winter Soldier"
+        },
+        "datePublished": "2019-04-26",
+        "leadActor": {
+          "actorName": "Robert Downey Jr.",
+          "actorAge": 57
+        },
+        "description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.",
+        "duration": 181
+      }
+    ]
+  }
