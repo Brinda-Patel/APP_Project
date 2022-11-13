@@ -15,16 +15,43 @@ class MovieDetailsMapper:
         print("Table Created Successfully")
         return self.conn.execute_query(query)
 
-    # def select(self, dictionary={}):
-    #     query = f'SELECT * FROM movieDetail WHERE '
-    #     for key in dictionary:
-    #         query += f'{key} = "{dictionary[key]}" AND '
-    #     query = query[:-5]
-    #     return self.conn.execute_query(query)
-
-    def select(self):
-        query = f'select * from movieDetail where movieIMDbRating > 8.5'
+    def select_all(self):
+        query = f'select m.title, m.movieIMDbRating, m.totalRatingCount, m.totalUserReviews, m.totalCriticReviews, d.directorName, m.datePublished, a.actorName, m.description, m.duration from movieDetail m inner join Director d on m.director_id=d.director_id inner join Actor a on m.leadActor_id=a.leadActor_id'
         result = self.conn.execute_query(query)
-        print(result)
-        # for data in result:
-        #     print(data)
+        column_name = ["title", "movieIMDbRating", "totalRatingCount", "totalUserReviews", "totalCriticReviews", "directorName", "datePublished", "actorName", "description", "duration"]
+        final_result = []
+        for i in result:
+            fin_res = dict(zip(column_name, i))
+            final_result.append(fin_res)
+        return final_result
+
+    def select_specific(self,data: dict):
+        parameter = "Where "
+        if list(data.keys())[0] == "movieIMDbRating":
+            for key, value in data.items():
+                p= f"{key} > '{value}' AND"
+                parameter+=p
+            query = f'select m.title,m.movieIMDbRating,m.totalRatingCount,m.totalUserReviews,m.totalCriticReviews,d.directorName, m.datePublished, a.actorName, m.description,m.duration from movieDetail m inner join Director d on m.director_id=d.director_id inner join Actor a on m.leadActor_id=a.leadActor_id {parameter[:-4]}'
+            print(query)
+            result=self.conn.execute_query(query)
+
+            column_name = ["title", "movieIMDbRating", "totalRatingCount", "totalUserReviews", "totalCriticReviews", "directorName", "datePublished", "actorName", "description", "duration"]
+            final_result = []
+            for i in result:
+                fin_res = dict(zip(column_name, i))
+                final_result.append(fin_res)
+            return final_result
+        else:
+            for key, value in data.items():
+                p= f"{key} = '{value}' AND"
+                parameter+=p
+            query = f'select m.title,m.movieIMDbRating,m.totalRatingCount,m.totalUserReviews,m.totalCriticReviews,d.directorName, m.datePublished, a.actorName, m.description,m.duration from movieDetail m inner join Director d on m.director_id=d.director_id inner join Actor a on m.leadActor_id=a.leadActor_id {parameter[:-4]}'
+            print(query)
+            result=self.conn.execute_query(query)
+
+            column_name = ["title", "movieIMDbRating", "totalRatingCount", "totalUserReviews", "totalCriticReviews", "directorName", "datePublished", "actorName", "description", "duration"]
+            final_result = []
+            for i in result:
+                fin_res = dict(zip(column_name, i))
+                final_result.append(fin_res)
+            return final_result
