@@ -13,7 +13,6 @@ class LeadActorModel:
     def get_actorAge(self):
         return self.actorAge
 
-    
     def set_leadActor_id(self, leadActor_id):
         self.leadActor_id = leadActor_id
 
@@ -23,6 +22,5 @@ class LeadActorModel:
     def set_actorAge(self, actorAge):
         self.actorAge = actorAge
 
-    
     def _str_(self):
         return f"Lead Actor Details: {self.leadActor_id}, {self.actorName}, {self.actorAge}"

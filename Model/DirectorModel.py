@@ -13,7 +13,6 @@ class DirectorModel:
     def get_otherFamousMovie(self):
         return self.otherFamousMovie
 
-    
     def set_director_id(self, director_id):
         self.director_id = director_id
 
@@ -23,6 +22,5 @@ class DirectorModel:
     def set_otherFamousMovie(self, otherFamousMovie):
         self.otherFamousMovie = otherFamousMovie
 
-    
     def _str_(self):
         return f"Director Details: {self.director_id}, {self.directorName}, {self.otherFamousMovie}"

@@ -1,4 +1,4 @@
-class MovieDetails:
+class MovieDetailsModel:
     # def __init__(self, movieDetail_id, title, movieIMDbRating, totalRatingCount, totalUserReviews, totalCriticReviews, director_id, datePublished, leadActor_id, description, duration):
     #     self.movieDetail_id = movieDetail_id
     #     self.title = title

@@ -18,7 +18,7 @@ class DBConnection:
 
     def get_connection(self):
         try:
-            self.conn = sqlite3.connect('dataset4.db')
+            self.conn = sqlite3.connect('dataset5.db')
             self.cursor = self.conn.cursor()
             print("Connection to database is successful")
         except sqlite3.Error as e:
@@ -38,10 +38,9 @@ class DBConnection:
             self.cursor.execute(query)
             result = self.cursor.fetchall()
             self.conn.commit()
-            print("Query executed successfully")
+            # print("Query executed successfully!!!")
             return result
 
         except sqlite3.Error as e:
-            print("Query is not executed")
+            print("Query not executed")
             print(e)
-            

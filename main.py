@@ -101,7 +101,7 @@ import json
 import sqlite3
 from connection_to_db import DBConnection
 from Mapper.MovieDetailsMapper import MovieDetailsMapper
-from Model.MovieDetails import MovieDetails
+from Model.MovieDetailsModel import MovieDetailsModel
 from Mapper.DirectorMapper import DirectorMapper
 from Model.DirectorModel import DirectorModel
 from Mapper.LeadActorMapper import LeadActorMapper
@@ -123,7 +123,7 @@ def main():
     leadActorMapperObj.create_actorDetails()
     movieDetailsMapperObj = MovieDetailsMapper()
     movieDetailsMapperObj.create_moviedetails()
-    movieDetails = MovieDetails()
+    movieDetails = MovieDetailsModel()
     movieDetailsMapperObj.select()
     for data in response['movieDetail']:
         directorData = data['director']
