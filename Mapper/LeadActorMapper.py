@@ -1,5 +1,10 @@
 from connection_to_db import DBConnection
 
+<< << << < HEAD
+
+== == == =
+>>>>>> > 3d1db693133c506c4426269e15fb7a8b418898c2
+
 
 class LeadActorMapper:
     def __init__(self):
