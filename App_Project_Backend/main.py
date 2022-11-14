@@ -1,13 +1,5 @@
-# def getAPI():
 import json
 import sqlite3
-from connection_to_db import DBConnection
-from Mapper.MovieDetailsMapper import MovieDetailsMapper
-from Model.MovieDetailsModel import MovieDetailsModel
-from Mapper.DirectorMapper import DirectorMapper
-from Model.DirectorModel import DirectorModel
-from Mapper.LeadActorMapper import LeadActorMapper
-from Model.LeadActorModel import LeadActorModel
 
 from connection_to_db import DBConnection
 from Mapper.DirectorMapper import DirectorMapper
@@ -16,7 +8,7 @@ from Mapper.MovieDetailsMapper import MovieDetailsMapper
 from Model.DirectorModel import DirectorModel
 from Model.LeadActorModel import LeadActorModel
 from Model.MovieDetailsModel import MovieDetailsModel
-from fastapi import FastAPI
+from fastapi import status
 
 app = FastAPI()
 
@@ -84,19 +76,15 @@ def main():
 # API routing method calls
 movieDetailsMapperObj = MovieDetailsMapper()
 
-# API for displaying general MovieDetails
-
-
-@app.get("/DisplayMovieDetails")
+#API for displaying general MovieDetails
+@app.get("/DisplayMovieDetails") 
 async def display_all_movie_Detail():
-    result_ = movieDetailsMapperObj.select_all()
-    return {"movieDetail": result_}
+     result_ = movieDetailsMapperObj.select_all()
+     return {"movieDetail": result_}
 
-# API for displaying parameterized queries for MovieDetails:- eg: IMDbRating greater than a value, MovieDetail for given ActorName, DirectorName
-
-
-@app.post("/DisplayMovieDetails/Specific")
-async def select_specific(data: dict):
+#API for displaying parameterized queries for MovieDetails:- eg: IMDbRating greater than a value, MovieDetail for given ActorName, DirectorName 
+@app.post("/DisplayMovieDetails/Specific") 
+async def select_specific( data:dict):
     result_ = movieDetailsMapperObj.select_specific(data)
     return {"movieDetail": result_}
 

@@ -1,16 +1,4 @@
 class MovieDetailsModel:
-    # def __init__(self, movieDetail_id, title, movieIMDbRating, totalRatingCount, totalUserReviews, totalCriticReviews, director_id, datePublished, leadActor_id, description, duration):
-    #     self.movieDetail_id = movieDetail_id
-    #     self.title = title
-    #     self.movieIMDbRating = movieIMDbRating
-    #     self.totalRatingCount = totalRatingCount
-    #     self.totalUserReviews = totalUserReviews
-    #     self.totalCriticReviews = totalCriticReviews
-    #     self.director_id = director_id
-    #     self.datePublished = datePublished
-    #     self.leadActor_id = leadActor_id
-    #     self.description = description
-    #     self.duration = duration
 
     def __init__(self):
         self.movieDetail_id = None
