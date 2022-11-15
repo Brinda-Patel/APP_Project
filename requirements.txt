@@ -1,0 +1,6 @@
+Node --version 16
+React --version 18
+pytest --version 7.2.0
+VS Code --version 1.73
+SQLiteStudio --version 3.3.3
+python --version 3.11
