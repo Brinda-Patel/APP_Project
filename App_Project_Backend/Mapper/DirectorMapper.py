@@ -1,4 +1,4 @@
-from connection_to_db import DBConnection
+from Connection import DBConnection
 
 
 class DirectorMapper:

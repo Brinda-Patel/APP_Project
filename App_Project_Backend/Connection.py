@@ -18,7 +18,7 @@ class DBConnection:
 
     def get_connection(self):
         try:
-            self.conn = sqlite3.connect('dataset5.db')
+            self.conn = sqlite3.connect('dataset4.db')
             self.cursor = self.conn.cursor()
             print("Connection to database is successful")
         except sqlite3.Error as e:

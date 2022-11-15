@@ -1,4 +1,4 @@
-from connection_to_db import DBConnection
+from Connection import DBConnection
 
 
 class MovieDetailsMapper:
@@ -11,14 +11,14 @@ class MovieDetailsMapper:
         self.conn.execute_query(query)
 
     def create_moviedetails(self):
-        query = f'CREATE TABLE if NOT EXISTS movieDetail (movieDetail_id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR (20) UNIQUE, movieIMDbRating  DECIMAL (2, 1), totalRatingCount INTEGER, totalUserReviews VARCHAR (20), totalCriticReviews VARCHAR (20), director_id INTEGER REFERENCES director (director_id), datePublished DATE, leadActor_id INTEGER REFERENCES leadActor (leadActor_id), description TEXT, duration INTEGER)'
+        query = f'CREATE TABLE IF NOT EXISTS movieDetail (movieDetail_id INTEGER PRIMARY KEY AUTOINCREMENT, title VARCHAR (20) UNIQUE, movieIMDbRating  DECIMAL (2, 1), totalRatingCount INTEGER, totalUserReviews VARCHAR (20), totalCriticReviews VARCHAR (20), director_id INTEGER REFERENCES director (director_id), datePublished DATE, leadActor_id INTEGER REFERENCES leadActor (leadActor_id), description TEXT, duration INTEGER)'
         print("Table Created Successfully")
         return self.conn.execute_query(query)
 
     def select_all(self):
-        query = f'select m.title, m.movieIMDbRating, m.totalRatingCount, m.totalUserReviews, m.totalCriticReviews, d.directorName, m.datePublished, a.actorName, m.description, m.duration from movieDetail m inner join Director d on m.director_id=d.director_id inner join Actor a on m.leadActor_id=a.leadActor_id'
+        query = f'SELECT m.movieDetail_id, m.title, m.movieIMDbRating, m.totalRatingCount, m.totalUserReviews, m.totalCriticReviews, d.directorName, m.datePublished, a.actorName, m.description, m.duration FROM movieDetail m INNER JOIN Director d on m.director_id=d.director_id INNER JOIN Actor a ON m.leadActor_id=a.leadActor_id'
         result = self.conn.execute_query(query)
-        column_name = ["title", "movieIMDbRating", "totalRatingCount", "totalUserReviews", "totalCriticReviews", "directorName", "datePublished", "actorName", "description", "duration"]
+        column_name = ["movieDetail_id", "title", "movieIMDbRating", "totalRatingCount", "totalUserReviews", "totalCriticReviews", "directorName", "datePublished", "actorName", "description", "duration"]
         final_result = []
         for i in result:
             fin_res = dict(zip(column_name, i))
@@ -31,8 +31,8 @@ class MovieDetailsMapper:
             for key, value in data.items():
                 p= f"{key} > '{value}' AND"
                 parameter+=p
-            query = f'select m.title,m.movieIMDbRating,m.totalRatingCount,m.totalUserReviews,m.totalCriticReviews,d.directorName, m.datePublished, a.actorName, m.description,m.duration from movieDetail m inner join Director d on m.director_id=d.director_id inner join Actor a on m.leadActor_id=a.leadActor_id {parameter[:-4]}'
-            print(query)
+            query = f'SELECT m.title,m.movieIMDbRating,m.totalRatingCount,m.totalUserReviews,m.totalCriticReviews,d.directorName, m.datePublished, a.actorName, m.description,m.duration FROM movieDetail m INNER JOIN Director d on m.director_id=d.director_id INNER JOIN Actor a ON m.leadActor_id=a.leadActor_id {parameter[:-4]}'
+
             result=self.conn.execute_query(query)
 
             column_name = ["title", "movieIMDbRating", "totalRatingCount", "totalUserReviews", "totalCriticReviews", "directorName", "datePublished", "actorName", "description", "duration"]
@@ -45,10 +45,8 @@ class MovieDetailsMapper:
             for key, value in data.items():
                 p= f"{key} = '{value}' AND"
                 parameter+=p
-            query = f'select m.title,m.movieIMDbRating,m.totalRatingCount,m.totalUserReviews,m.totalCriticReviews,d.directorName, m.datePublished, a.actorName, m.description,m.duration from movieDetail m inner join Director d on m.director_id=d.director_id inner join Actor a on m.leadActor_id=a.leadActor_id {parameter[:-4]}'
-            print(query)
+            query = f'SELECT m.title,m.movieIMDbRating,m.totalRatingCount,m.totalUserReviews,m.totalCriticReviews,d.directorName, m.datePublished, a.actorName, m.description,m.duration FROM movieDetail m INNER JOIN Director d ON m.director_id=d.director_id INNER JOIN Actor a ON m.leadActor_id=a.leadActor_id {parameter[:-4]}'
             result=self.conn.execute_query(query)
-
             column_name = ["title", "movieIMDbRating", "totalRatingCount", "totalUserReviews", "totalCriticReviews", "directorName", "datePublished", "actorName", "description", "duration"]
             final_result = []
             for i in result:

@@ -1,48 +1,38 @@
-# def getAPI():
 import json
 import sqlite3
-from connection_to_db import DBConnection
-from Mapper.MovieDetailsMapper import MovieDetailsMapper
-from Model.MovieDetailsModel import MovieDetailsModel
-from Mapper.DirectorMapper import DirectorMapper
-from Model.DirectorModel import DirectorModel
-from Mapper.LeadActorMapper import LeadActorMapper
-from Model.LeadActorModel import LeadActorModel
-
-from connection_to_db import DBConnection
+from Connection import DBConnection
+from fastapi import FastAPI,Response,Request
 from Mapper.DirectorMapper import DirectorMapper
 from Mapper.LeadActorMapper import LeadActorMapper
 from Mapper.MovieDetailsMapper import MovieDetailsMapper
 from Model.DirectorModel import DirectorModel
 from Model.LeadActorModel import LeadActorModel
 from Model.MovieDetailsModel import MovieDetailsModel
-from fastapi import FastAPI
+from fastapi import status
 
 app = FastAPI()
 
-
 def main():
-    # getting metadata.json from url
+    #getting metadata.json from url
     url = "https://raw.githubusercontent.com/Brinda-Patel/Dataset/main/metadata.json?token=GHSAT0AAAAAAB24U5N6Q6BHIM7LYX4QQTFMY3MYFIA"
 
     response = json.load((open('metadata.json')))
 
-    # objects of mapper
+    #objects of mapper
     directorMapperObj = DirectorMapper()
     leadActorMapperObj = LeadActorMapper()
     movieDetailsMapperObj = MovieDetailsMapper()
 
-    # objects of model
+    #objects of model
     directorDetails = DirectorModel()
     actorDetails = LeadActorModel()
     movieDetails = MovieDetailsModel()
 
-    # creating tables using mapper
+    #creating tables using mapper
     directorMapperObj.create_directorDetails()
     leadActorMapperObj.create_actorDetails()
     movieDetailsMapperObj.create_moviedetails()
-    movieDetails = MovieDetailsModel()
-    movieDetailsMapperObj.select()
+    
     for data in response['movieDetail']:
         directorData = data['director']
         leadActorData = data['leadActor']
@@ -80,26 +70,24 @@ def main():
         movieDetails.duration = data['duration']
         movieDetailsMapperObj.insert_moviedetails(movieDetails)
 
-
 # API routing method calls
 movieDetailsMapperObj = MovieDetailsMapper()
 
-# API for displaying general MovieDetails
-
-
-@app.get("/DisplayMovieDetails")
-async def display_all_movie_Detail():
+#API for displaying general MovieDetails
+@app.get("/DisplayMovieDetails", status_code=status.HTTP_200_OK) 
+async def display_all_movie_Detail(response: Response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
     result_ = movieDetailsMapperObj.select_all()
     return {"movieDetail": result_}
 
-# API for displaying parameterized queries for MovieDetails:- eg: IMDbRating greater than a value, MovieDetail for given ActorName, DirectorName
-
-
-@app.post("/DisplayMovieDetails/Specific")
-async def select_specific(data: dict):
+#API for displaying parameterized queries for MovieDetails:- eg: IMDbRating greater than a value, MovieDetail for given ActorName, DirectorName 
+@app.post("/DisplayMovieDetails/Specific", status_code=status.HTTP_200_OK) 
+async def select_specific(data:dict, response: Response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
     result_ = movieDetailsMapperObj.select_specific(data)
-    return {"movieDetail": result_}
+    return {"movieDetail": result_}    
 
 if __name__ == "__main__":
 
     main()
+
